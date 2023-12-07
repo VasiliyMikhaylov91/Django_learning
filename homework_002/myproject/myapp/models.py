@@ -9,6 +9,9 @@ class Client(models.Model):
     address = models.CharField(max_length=100)
     reg_date = models.DateField(auto_now_add=True)
 
+    def __str__(self):
+        return f'Client name: {self.name}, email: {self.email}, tel: {self.tel}, registration date: {self.reg_date}'
+
 
 class Item(models.Model):
     name = models.CharField(max_length=100)
@@ -16,6 +19,9 @@ class Item(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     count = models.IntegerField()
     create_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Item: {self.name}, prise: {self.price}, count: {self.count}'
 
 
 class Order(models.Model):
